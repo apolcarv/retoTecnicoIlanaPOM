@@ -9,7 +9,7 @@ Patron de diseño: POM Puro y selenium webdriver
 Framework: Junit, gherkin, cucumber, selenium, webdriver.
 Framework adicionales: libreria Faker.
 Lenguaje programacion: Java.
-Driver: ChromeDriver version  114.0.5735.90.
+Driver: Edge version  120.0.2210.121
 
 
 Se crea proyecto  en patron de diseño POM con actualizacion de diseño,

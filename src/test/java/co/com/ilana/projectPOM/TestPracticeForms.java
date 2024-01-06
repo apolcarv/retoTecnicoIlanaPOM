@@ -23,6 +23,7 @@ public class TestPracticeForms {
 
     @Test
     public void test(){
+        //Example test webdriver
         PageHome pageHome = new PageHome(driver);
         pageHome.navigateToForm();
 
