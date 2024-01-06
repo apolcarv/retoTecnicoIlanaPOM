@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group 'co.com.ilana.projectPOM'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'junit:junit:4.13.1'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    implementation 'io.cucumber:cucumber-java8:6.11.0'
+    implementation 'io.cucumber:cucumber-junit:6.11.0'
+    implementation 'io.cucumber:cucumber-java:6.11.0'
+    implementation group: 'com.github.javafaker', name: 'javafaker', version: '1.0.2'
+
+}
+
+gradle.startParameter.continueOnFailure = true
