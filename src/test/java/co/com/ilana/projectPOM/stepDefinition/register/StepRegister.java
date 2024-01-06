@@ -1,13 +1,15 @@
-package co.com.ilana.projectPOM.stepDefinition;
+package co.com.ilana.projectPOM.stepDefinition.register;
 
 import co.com.ilana.projectPOM.page.PageHome;
 import co.com.ilana.projectPOM.page.PagePopUpFormSuccess;
 import co.com.ilana.projectPOM.page.PageRegister;
 import io.cucumber.java.After;
+
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
 import org.openqa.selenium.WebDriver;
 
 import static co.com.ilana.projectPOM.page.Base.edgeDriverConnection;

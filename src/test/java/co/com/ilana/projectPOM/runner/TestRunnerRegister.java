@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = {"src/test/resources/features/frmRegister.feature"}
-        , glue = {"co.com.ilana.projectPOM.stepDefinition"}
+        , glue = {"co.com.ilana.projectPOM.stepDefinition.register"}
         , snippets =  CucumberOptions.SnippetType.CAMELCASE)
 public class TestRunnerRegister {
 }
