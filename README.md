@@ -13,7 +13,7 @@
 #### ID: Intellij IDEA community Edition 2023.1
 ##### ------------------------------------------------------------------------------------------------------
 ### Buscar en la siguiente ruta los reportes y evidencias de cada uno de los test con estado exitoso
-#### path: src/test/resources/ReporteEvidencias
+#### path: src/test/resources/evidenceReports
 ### Todos los casos pruebas cumplen con cada criterio solitado
 ### Todas las clases estan con auto-ident lines y reformat code
 ##### ------------------------------------------------------------------------------------------------------
