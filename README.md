@@ -10,6 +10,7 @@
 #### Framework adicionales: libreria Faker.
 #### Lenguaje programacion: Java.
 #### Driver: Edge version  120.0.2210.121
+#### ID: Intellij IDEA community Edition 2023.1
 ##### ------------------------------------------------------------------------------------------------------
 ### Buscar en la siguiente ruta los reportes y evidencias de cada uno de los test con estado exitoso
 #### path: src/test/resources/ReporteEvidencias
