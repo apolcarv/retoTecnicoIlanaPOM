@@ -1,7 +1,6 @@
 package co.com.ilana.projectPOM.stepDefinition.register;
 
 import co.com.ilana.projectPOM.page.PageHome;
-import co.com.ilana.projectPOM.page.PagePopUpFormSuccess;
 import co.com.ilana.projectPOM.page.PageRegister;
 import io.cucumber.java.After;
 
@@ -18,32 +17,34 @@ public class StepRegister {
 
     private static final String URL_BASE = "https://demoqa.com/";
     private WebDriver driver;
-    private static final String PATH_WEBDRIVER = "C:/AutomationTest/retoTecnicoIlanaPOM/src/test/resources/webdriver/edge/msedgedriver.exe";
+    private static final String PATH_WEBDRIVER =
+            "C:/AutomationTest/retoTecnicoIlanaPOM/src/test/resources/webdriver/edge/msedgedriver.exe";
 
     @Before
-    public void setUp(){
-        driver = edgeDriverConnection(PATH_WEBDRIVER,URL_BASE);
+    public void setUp() {
+        driver = edgeDriverConnection(PATH_WEBDRIVER, URL_BASE);
     }
+
     @Given("que el usuario ingresa a la pagina web para la creacion de un registro")
-    public void queElUsuarioIngresaALaPaginaWebParaLaCreacionDeUnRegistro() {
+    public void thaTheuserEnterTheWebPageForTheCreationOfARecord() {
         PageHome pageHome = new PageHome(driver);
         pageHome.navigateToForm();
     }
 
     @When("llena los campos requeridos")
-    public void llenaLosCamposRequeridos() {
+    public void fillRequiredFields() {
         PageRegister pageRegister = new PageRegister(driver);
         pageRegister.fillPracticeForm();
     }
 
     @Then("crea su cuenta con exito")
-    public void creaSuCuentaConExito() {
-        PagePopUpFormSuccess pagePopUpFormSuccess = new PagePopUpFormSuccess(driver);
-        pagePopUpFormSuccess.validateFormSuccess();
+    public void createYourAccountSuccessfully() {
+        PageRegister pageRegister = new PageRegister(driver);
+        pageRegister.validateFormSuccess();
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 }

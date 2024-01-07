@@ -8,29 +8,28 @@ import org.openqa.selenium.WebDriver;
 
 import static co.com.ilana.projectPOM.page.Base.edgeDriverConnection;
 
-
 public class TestPracticeForms {
 
     private static final String URL_BASE = "https://demoqa.com/";
     private WebDriver driver;
-    private static final String PATH_WEBDRIVER = "C:/AutomationTest/retoTecnicoIlanaPOM/src/test/resources/webdriver/edge/msedgedriver.exe";
-
+    private static final String PATH_WEBDRIVER =
+            "C:/AutomationTest/retoTecnicoIlanaPOM/src/test/resources/webdriver/edge/msedgedriver.exe";
 
     @Before
-    public void setUp(){
-        driver = edgeDriverConnection(PATH_WEBDRIVER,URL_BASE);
+    public void setUp() {
+        driver = edgeDriverConnection(PATH_WEBDRIVER, URL_BASE);
     }
 
     @Test
-    public void test(){
-        //Example test webdriver
+    public void test() {
+        //Example test webdriver - con Junit
         PageHome pageHome = new PageHome(driver);
         pageHome.navigateToForm();
 
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 }

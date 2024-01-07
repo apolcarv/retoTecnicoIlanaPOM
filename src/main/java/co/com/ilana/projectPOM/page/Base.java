@@ -7,7 +7,8 @@ public class Base {
 
     private static final String WINDOWS_CHROMEDRIVER_KEY = "webdriver.edge.driver";
     private static WebDriver webDriver;
-    public static WebDriver edgeDriverConnection(String sourcePath, String url){
+
+    public static WebDriver edgeDriverConnection(String sourcePath, String url) {
 
         System.setProperty(WINDOWS_CHROMEDRIVER_KEY, sourcePath);
         webDriver = new EdgeDriver();

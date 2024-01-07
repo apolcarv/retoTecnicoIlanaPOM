@@ -15,11 +15,12 @@ public class StepCarrusel {
 
     private static final String URL_BASE = "https://demoqa.com/";
     private WebDriver driver;
-    private static final String PATH_WEBDRIVER = "C:/AutomationTest/retoTecnicoIlanaPOM/src/test/resources/webdriver/edge/msedgedriver.exe";
+    private static final String PATH_WEBDRIVER =
+            "C:/AutomationTest/retoTecnicoIlanaPOM/src/test/resources/webdriver/edge/msedgedriver.exe";
 
     @Before
-    public void setUp(){
-        driver = edgeDriverConnection(PATH_WEBDRIVER,URL_BASE);
+    public void setUp() {
+        driver = edgeDriverConnection(PATH_WEBDRIVER, URL_BASE);
     }
 
     @Given("que el usuario ingresa a la pagina web para validar la funcion carrusel")
@@ -27,20 +28,21 @@ public class StepCarrusel {
         PageHome pageHome = new PageHome(driver);
         pageHome.navigateToWidgets();
     }
+
     @When("navega hasta la posicion tres")
-    public void navegaHastaLaPosicionTres() throws InterruptedException {
+    public void navigateToPositionThree() throws InterruptedException {
         PageSlider pageSlider = new PageSlider(driver);
         pageSlider.slider();
     }
 
     @Then("verifica que el numero mostrado sea tres")
-    public void verificaQueElNumeroMostradoSea() {
+    public void verifyThatTheNumberDisplayedIs() {
         PageSlider pageSlider = new PageSlider(driver);
         pageSlider.compareValues();
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 }

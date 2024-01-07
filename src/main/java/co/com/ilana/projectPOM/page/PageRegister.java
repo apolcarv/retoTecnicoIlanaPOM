@@ -6,19 +6,16 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import static org.junit.Assert.assertEquals;
 
-public class PageRegister  {
+public class PageRegister {
 
     //Model for a student.
     private final DataRegister dataRegister = new DataRegister();
     private WebDriver webDriver;
 
     //Filling the form, locator.
-    private final By txtPracticeForm = By.xpath ("//*[@class='main-header' and contains(text(),'Practice Form')]");
+    private final By txtPracticeForm = By.xpath("//*[@class='main-header' and contains(text(),'Practice Form')]");
     private final By firstName = By.id("firstName");
     private final By lastName = By.id("lastName");
     private final By userEmail = By.id("userEmail");
@@ -30,6 +27,7 @@ public class PageRegister  {
     private final By day = By.cssSelector(".react-datepicker__day--" + dataRegister.getDateOfBirthDayInFormat() + ":nth-child(1)");
     private final By currentAddress = By.id("currentAddress");
     private final By submit = By.id("submit");
+    private final By txtFormSendSuccess = By.id("example-modal-sizes-title-lg");
 
 
     public PageRegister(WebDriver webDriver) {
@@ -41,12 +39,12 @@ public class PageRegister  {
     }
 
 
-    public void scrollTo(By locator){
-        JavascriptExecutor jse = (JavascriptExecutor)webDriver;
-        jse.executeScript("arguments[0].scrollIntoView();",webDriver.findElement(locator));
+    public void scrollTo(By locator) {
+        JavascriptExecutor jse = (JavascriptExecutor) webDriver;
+        jse.executeScript("arguments[0].scrollIntoView();", webDriver.findElement(locator));
     }
 
-    public void fillPracticeForm(){
+    public void fillPracticeForm() {
         WebElement validateFormIsPresent = webDriver.findElement(txtPracticeForm);
         assertEquals("Practice Form", validateFormIsPresent.getText());
 
@@ -81,13 +79,8 @@ public class PageRegister  {
 
     }
 
-    //setter Model
-    private Set<String> dataEntered(){
-        Set<String> dataEntered = new HashSet<>();
-        dataEntered.add(dataRegister.getFirstName() + " " + dataRegister.getLastName());
-        dataEntered.add(dataRegister.getEmail());
-        dataEntered.add(dataRegister.getMobile());
-        dataEntered.add(dataRegister.getDateOfBirthDay() + " " + dataRegister.getDateOfBirthMonth() + "," + dataRegister.getDateOfBirthYear());
-        return dataEntered;
+    public void validateFormSuccess() {
+        WebElement validateFormIsPresent = webDriver.findElement(txtFormSendSuccess);
+        assertEquals("Thanks for submitting the form", validateFormIsPresent.getText());
     }
 }

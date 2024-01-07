@@ -27,13 +27,13 @@ public class PageHome {
         webDriver.findElement(locator).click();
     }
 
-    public void scrollTo(By locator){
-        JavascriptExecutor jse = (JavascriptExecutor)webDriver;
-        jse.executeScript("arguments[0].scrollIntoView();",webDriver.findElement(locator));
+    public void scrollTo(By locator) {
+        JavascriptExecutor jse = (JavascriptExecutor) webDriver;
+        jse.executeScript("arguments[0].scrollIntoView();", webDriver.findElement(locator));
     }
 
     public void navigateToForm() {
-        assertEquals("DEMOQA",webDriver.getTitle());
+        assertEquals("DEMOQA", webDriver.getTitle());
         scrollTo(cardForms);
         clickOn(forms);
         clickOn(practiceFormElement);
@@ -42,16 +42,16 @@ public class PageHome {
     public void navigateToElements() {
         scrollTo(elements);
         clickOn(elements);
+        JavascriptExecutor js = (JavascriptExecutor) webDriver;
+        js.executeScript("window.scrollBy(0,1500)");
         clickOn(btnElement);
     }
 
     public void navigateToWidgets() {
         scrollTo(widgets);
         clickOn(widgets);
-
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
         js.executeScript("window.scrollBy(0,3304)");
-
         clickOn(btnWidgets);
     }
 }
